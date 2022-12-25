@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+</head>
+<body>
+    <div
+        id="root"
+    >
+
+    </div>
+    <script src="./sarfi.js"></script>
+    <script type="text/babel">
+        
+        
+        /** @jsx Sarfi.createElement */
+                function Counter() {
+                        const [state, setState] = Sarfi.useState(1)
+                        return (
+                            <h1
+                            >
+                                <button
+                                    onClick={() => setState(c => c + 1)}
+                                >
+                                    Counter
+                                </button> 
+                                
+                                {state}
+                            </h1>
+                        )
+                    }
+
+        const container = document.getElementById("root")
+        Sarfi.render(<Counter />    , container)
+
+    </script>
+</body>
+</html>
